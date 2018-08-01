@@ -1,0 +1,42 @@
+.header{
+    margin: 0.2rem 0;
+}
+
+.logo{
+    float: left;
+    width: 40%;
+    margin-left: 3%;
+}
+
+.search{
+    float: right;
+    width: 15%;
+    margin-right: 3%;
+}
+
+/*banner轮播样式*/
+.banner .swiper-wrapper,.banner .swiper-slide{
+    height: inherit;
+}
+
+.banner .swiper-slide p{
+    line-height: 34px;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid #C3C3C3;
+}
+
+.banner .swiper-pagination-bullet{
+    background: initial;
+    opacity: 1;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+}
+
+.banner .swiper-pagination-bullet-active{
+    background: #fff;
+}
+
+.wrapper .swiper-container-horizontal>.swiper-pagination-bullets{
+    bottom: 44px;
+}
