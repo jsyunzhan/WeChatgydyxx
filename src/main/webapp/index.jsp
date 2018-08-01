@@ -14,6 +14,7 @@
     <script src="${APP_PATH}/static/js/public.js"></script>
     <script src="${APP_PATH}/static/js/index.js"></script>
     <title>高邮第一实验小学</title>
+
 </head>
 <body>
     <div class="wrapper">
