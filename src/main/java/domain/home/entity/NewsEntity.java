@@ -8,10 +8,10 @@ import lombok.Setter;
 public class NewsEntity extends AbstractEntity{
 
     //新闻标题
-    private String newsTitle;
+    private String title;
 
     //新闻内容
-    private String newsDetails;
+    private String details;
 
     //图片地址
     private String picturePath;
@@ -25,8 +25,8 @@ public class NewsEntity extends AbstractEntity{
     @Override
     public String toString() {
         return "NewsEntity{" +
-                "newsTitle='" + newsTitle + '\'' +
-                ", newsDetails='" + newsDetails + '\'' +
+                "title='" + title + '\'' +
+                ", details='" + details + '\'' +
                 ", picturePath='" + picturePath + '\'' +
                 ", mainFlag=" + mainFlag +
                 ", changeFlag=" + changeFlag +

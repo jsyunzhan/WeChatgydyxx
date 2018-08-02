@@ -4,14 +4,14 @@
 <mapper namespace="domain.home.dao.NoticeDao">
 
     <resultMap id="ResultNoticeEntityInfo" type="NoticeEntityInfo">
-        <result property="noticeDetails" column="NOTICE_DETAILS" typeHandler="domain.home.entity.ConvertBlobTypeHandler"/>
+        <result property="details" column="NOTICE_DETAILS" typeHandler="domain.home.entity.ConvertBlobTypeHandler"/>
     </resultMap>
 
     <!--查询集合-->
     <select id="noticelist" resultMap="ResultNoticeEntityInfo">
         SELECT
         t.ID id,
-        t.NOTICE_TITLE noticeTitle,
+        t.NOTICE_TITLE title,
         t.NOTICE_DETAILS,
         t.PICTURE_PATH picturePath,
         t.CREATE_USER_ID createUserId,
@@ -27,7 +27,7 @@
     <select id="noticeDetails" resultMap="ResultNoticeEntityInfo">
         SELECT
         t.ID id,
-        t.NOTICE_TITLE noticeTitle,
+        t.NOTICE_TITLE title,
         t.NOTICE_DETAILS,
         t.PICTURE_PATH picturePath,
         t.CREATE_USER_ID createUserId,

@@ -5,13 +5,13 @@
 <mapper namespace="domain.home.dao.NewsDao">
 
     <resultMap id="ResultNewsEntityInfo" type="NewsEntityInfo">
-        <result property="newsDetails" column="NEWS_DETAILS" typeHandler="domain.home.entity.ConvertBlobTypeHandler"/>
+        <result property="details" column="NEWS_DETAILS" typeHandler="domain.home.entity.ConvertBlobTypeHandler"/>
     </resultMap>
 
     <select id="newsList" resultMap="ResultNewsEntityInfo">
         SELECT
         t.ID id,
-        t.NEWS_TITLE newsTitle,
+        t.NEWS_TITLE title,
         t.NEWS_DETAILS,
         t.PICTURE_PATH picturePath,
         t.CREATE_USER_ID createUserId,
@@ -26,7 +26,7 @@
     <select id="newsDetails" resultMap="ResultNewsEntityInfo">
         SELECT
         t.ID id,
-        t.NEWS_TITLE newsTitle,
+        t.NEWS_TITLE title,
         t.NEWS_DETAILS,
         t.PICTURE_PATH picturePath,
         t.CREATE_USER_ID createUserId,

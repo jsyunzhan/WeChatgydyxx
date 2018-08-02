@@ -10,12 +10,12 @@ import java.util.Arrays;
 public class NoticeEntity extends AbstractEntity{
 
     //公告标题
-    private String noticeTitle;
+    private String title;
 
     private byte[] noticeDetailsByte;
 
     //公告内容
-    private String noticeDetails;
+    private String details;
 
     //图片地址
     private String picturePath;
@@ -23,9 +23,9 @@ public class NoticeEntity extends AbstractEntity{
     @Override
     public String toString() {
         return "NoticeEntity{" +
-                "noticeTitle='" + noticeTitle + '\'' +
+                "title='" + title + '\'' +
                 ", noticeDetailsByte=" + Arrays.toString(noticeDetailsByte) +
-                ", noticeDetails='" + noticeDetails + '\'' +
+                ", details='" + details + '\'' +
                 ", picturePath='" + picturePath + '\'' +
                 '}';
     }
