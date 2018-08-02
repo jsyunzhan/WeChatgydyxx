@@ -23,6 +23,7 @@
         ORDER BY t.CREATE_DATA
     </select>
 
+
     <select id="noticeDetails" resultMap="ResultNoticeEntityInfo">
         SELECT
         t.ID id,
