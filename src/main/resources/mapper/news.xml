@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="domain.home.dao.NewsDao">
+
+    <resultMap id="ResultNewsEntityInfo" type="NewsEntityInfo">
+        <result property="newsDetails" column="NEWS_DETAILS" typeHandler="domain.shiro.entity.ConvertBlobTypeHandler"/>
+    </resultMap>
+
+    <select id="newsList" resultMap="ResultNewsEntityInfo">
+        SELECT
+        t.ID id,
+        t.NEWS_TITLE newsTitle,
+        t.NEWS_DETAILS,
+        t.PICTURE_PATH picturePath,
+        t.CREATE_USER_ID createUserId,
+        t.CREATE_DATA createDate,
+        t.UPDATE_USER_ID updateUserId,
+        t.UPDATE_DATA updateDate
+        FROM t_home_news t
+        WHERE t.DELETE_FLAG='1'
+        ORDER BY t.CREATE_DATA
+    </select>
+
+    <select id="newsDetails" resultMap="ResultNewsEntityInfo">
+        SELECT
+        t.ID id,
+        t.NEWS_TITLE newsTitle,
+        t.NEWS_DETAILS,
+        t.PICTURE_PATH picturePath,
+        t.CREATE_USER_ID createUserId,
+        t.CREATE_DATA createDate,
+        t.UPDATE_USER_ID updateUserId,
+        t.UPDATE_DATA updateDate
+        FROM t_home_news t
+        WHERE t.DELETE_FLAG='1' AND t.ID=#{id}
+    </select>
+
+
+</mapper>
