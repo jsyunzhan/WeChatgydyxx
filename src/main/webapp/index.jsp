@@ -23,7 +23,9 @@
         <div class="header clearfix">
             <%--Logo--%>
             <div class="logo">
-                <img src="${APP_PATH}/static/images/logo.png">
+                <a href="${APP_PATH}/index.jsp">
+                    <img src="${APP_PATH}/static/images/logo.png">
+                </a>
             </div>
             <%--搜索--%>
             <div class="search">
@@ -45,31 +47,24 @@
             <div class="swiper-pagination"></div>
         </div>
         <div class="module clearfix">
-            <a href="javascript:;">
-                <div class="Mchild">
-                    <img src="${APP_PATH}/static/images/notice.png">
-                    <p>通知公告</p>
-                </div>
-            </a>
-            <a href="javascript:;">
-                <div class="Mchild">
-                    <img src="${APP_PATH}/static/images/news.png">
-                    <p>新闻中心</p>
-                </div>
-            </a>
-            <a href="javascript:;">
-                <div class="Mchild">
-                    <img src="${APP_PATH}/static/images/money.png">
-                    <p>教师工资</p>
-                </div>
-            </a>
-            <a href="javascript:;">
-                <div class="Mchild">
-                    <img src="${APP_PATH}/static/images/publicity.png">
-                    <p>内部公示</p>
-                </div>
-            </a>
+            <div class="Mchild">
+                <img src="${APP_PATH}/static/images/notice.png">
+                <p>通知公告</p>
+            </div>
+            <div class="Mchild">
+                <img src="${APP_PATH}/static/images/news.png">
+                <p>新闻中心</p>
+            </div>
+            <div class="Mchild">
+                <img src="${APP_PATH}/static/images/money.png">
+                <p>教师工资</p>
+            </div>
+            <div class="Mchild">
+                <img src="${APP_PATH}/static/images/publicity.png">
+                <p>内部公示</p>
+            </div>
         </div>
+        <%--页面底部--%>
         <div class="footer">
             <p>Copyright@2018 http://xxx.org All Rights Reserved.</p>
             <p>高邮市第一实验小学 版权所有</p>

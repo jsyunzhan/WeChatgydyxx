@@ -8,7 +8,7 @@
     %>
     <link rel="stylesheet" href="${APP_PATH}/static/css/public.css">
     <link rel="stylesheet" href="${APP_PATH}/static/css/publicPart.css">
-    <link rel="stylesheet" href="${APP_PATH}/static/css/index.css">
+    <link rel="stylesheet" href="${APP_PATH}/static/css/list.css">
     <script src="${APP_PATH}/static/jq/jquery-1.12.4.min.js"></script>
     <script src="${APP_PATH}/static/js/pop.js"></script>
     <script src="${APP_PATH}/static/js/public.js"></script>
@@ -21,14 +21,78 @@
     <div class="header clearfix">
         <%--Logo--%>
         <div class="logo">
-            <img src="${APP_PATH}/static/images/logo.png">
+            <a href="${APP_PATH}/index.jsp">
+                <img src="${APP_PATH}/static/images/logo.png">
+            </a>
         </div>
         <%--搜索--%>
         <div class="search">
             <img src="${APP_PATH}/static/images/search.png">
         </div>
     </div>
-
+    <%--标题--%>
+    <div class="titleList">
+        <div class="listTitle">搜索结果</div>
+        <div class="list">
+            <div class="listChild">
+                <div>搜索结果搜索结果</div>
+                <div>06-23</div>
+            </div>
+            <div class="listChild">
+                <div>搜索结果搜索结果</div>
+                <div>06-23</div>
+            </div>
+            <div class="listChild">
+                <div>搜索结果搜索结果</div>
+                <div>06-23</div>
+            </div>
+            <div class="listChild">
+                <div>搜索结果搜索结果</div>
+                <div>06-23</div>
+            </div>
+            <div class="listChild">
+                <div>搜索结果搜索结果</div>
+                <div>06-23</div>
+            </div>
+            <div class="listChild">
+                <div>搜索结果搜索结果</div>
+                <div>06-23</div>
+            </div>
+            <div class="listChild">
+                <div>搜索结果搜索结果</div>
+                <div>06-23</div>
+            </div>
+            <div class="listChild">
+                <div>搜索结果搜索结果</div>
+                <div>06-23</div>
+            </div>
+            <div class="listChild">
+                <div>搜索结果搜索结果</div>
+                <div>06-23</div>
+            </div>
+            <div class="listChild">
+                <div>搜索结果搜索结果</div>
+                <div>06-23</div>
+            </div>
+            <div class="listChild">
+                <div>搜索结果搜索结果</div>
+                <div>06-23</div>
+            </div>
+            <div class="listChild">
+                <div>搜索结果搜索结果</div>
+                <div>06-23</div>
+            </div>
+            <div class="listChild">
+                <div>搜索结果搜索结果</div>
+                <div>06-23</div>
+            </div>
+        </div>
+        <div class="more">
+            查看更多<span><img src="${APP_PATH}/static/images/more.png"></span>
+        </div>
+        <div class="nomore">没有更多了~~</div>
+    </div>
+    <%--页面底部--%>
     <div class="footer">
         <p>Copyright@2018 http://xxx.org All Rights Reserved.</p>
         <p>高邮市第一实验小学 版权所有</p>
@@ -38,5 +102,7 @@
 </body>
 <script>
     var path  = '<%=request.getContextPath()%>';
+    var data = "${url}";
+    console.log(data);
 </script>
 </html>

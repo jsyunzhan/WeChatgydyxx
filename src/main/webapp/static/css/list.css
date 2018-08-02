@@ -1,0 +1,64 @@
+/*列表*/
+.titleList{
+    padding-bottom: 74px;
+}
+
+.listTitle{
+    text-align: center;
+    line-height: 20px;
+    font-size: 18px;
+    font-family: '黑体';
+    margin-top: 20px;
+}
+
+.listChild{
+    display: flex;
+    line-height: 50px;
+    height: 40px;
+    font-size: 14px;
+    width: 94%;
+    margin: 0 auto;
+    color: #656565;
+    border-bottom: 1px dashed #C3C3C3;
+}
+
+.listChild div:nth-child(1){
+    flex: 1;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.listChild div:nth-child(2){
+    width: 60px;
+    text-align: right;
+}
+
+/*展示更多*/
+.more{
+    display: none;
+    width: 100px;
+    line-height: 30px;
+    font-size: 14px;
+    margin: 15px auto;
+    border: 1px solid #C3C3C3;
+    border-radius: 5px;
+    text-align: center;
+    color: #989898;
+}
+
+.more span{
+    display: inline-block;
+    width: 14px;
+    vertical-align: top;
+    margin-top: 8px;
+}
+
+.nomore{
+    display: none;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+    color: #989898;
+}
