@@ -5,7 +5,7 @@
 
 
     <typeAliases>
-
-</typeAliases>
+        <typeAlias alias="NoticeEntityInfo" type="domain.home.entity.NoticeEntity"/>
+    </typeAliases>
 
 </configuration>
