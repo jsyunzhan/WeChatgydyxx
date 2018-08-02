@@ -1,4 +1,7 @@
 package domain;
 
-public class readme {
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface readme {
 }
