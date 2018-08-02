@@ -1,5 +1,5 @@
 $(function () {
-    console.log(path)
+
     // 请求
     $.ajax({
         url:path+'/home/'+ data + '/list',
@@ -8,7 +8,6 @@ $(function () {
             console.log(event);
         }
     });
-
 
     // 搜索弹窗
     initUtils();
