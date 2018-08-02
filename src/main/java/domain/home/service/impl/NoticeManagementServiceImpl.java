@@ -27,4 +27,9 @@ public class NoticeManagementServiceImpl implements NoticeManagementService{
     public List<NoticeEntity> noticelist(NoticeEntity noticeEntity) {
         return noticeDao.noticelist(noticeEntity);
     }
+
+    @Override
+    public NoticeEntity noticeDetails(Long id) {
+        return noticeDao.noticeDetails(id);
+    }
 }

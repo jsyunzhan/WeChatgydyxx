@@ -11,4 +11,6 @@ public interface NoticeManagementService {
      * @return List<NoticeEntity>
      */
     List<NoticeEntity> noticelist(NoticeEntity noticeEntity);
+
+    NoticeEntity noticeDetails(Long id);
 }
