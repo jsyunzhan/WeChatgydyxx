@@ -16,6 +16,7 @@
     <script src="static/js/index.js"></script>
     <title>高邮第一实验小学</title>
 </head>
+
 <body>
     <div class="wrapper">
         <%--头部--%>
