@@ -5,7 +5,7 @@
 <mapper namespace="domain.home.dao.NewsDao">
 
     <resultMap id="ResultNewsEntityInfo" type="NewsEntityInfo">
-        <result property="newsDetails" column="NEWS_DETAILS" typeHandler="domain.shiro.entity.ConvertBlobTypeHandler"/>
+        <result property="newsDetails" column="NEWS_DETAILS" typeHandler="domain.home.entity.ConvertBlobTypeHandler"/>
     </resultMap>
 
     <select id="newsList" resultMap="ResultNewsEntityInfo">

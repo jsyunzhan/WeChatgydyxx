@@ -6,6 +6,7 @@
 
     <typeAliases>
         <typeAlias alias="NoticeEntityInfo" type="domain.home.entity.NoticeEntity"/>
+        <typeAlias alias="NewsEntityInfo" type="domain.home.entity.NewsEntity"/>
     </typeAliases>
 
 </configuration>
