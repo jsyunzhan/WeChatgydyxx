@@ -33,6 +33,7 @@ public class NoticeManagementController {
     public ModelAndView index(){
         final ModelAndView modelAndView = new ModelAndView("list");
         modelAndView.addObject("url","notice");
+        modelAndView.addObject("title","通知中心");
         return modelAndView;
     }
 

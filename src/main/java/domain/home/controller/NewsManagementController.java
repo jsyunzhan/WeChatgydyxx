@@ -30,6 +30,7 @@ public class NewsManagementController {
     public ModelAndView index(){
         final ModelAndView modelAndView = new ModelAndView("list");
         modelAndView.addObject("url","news");
+        modelAndView.addObject("title","新闻中心");
         return modelAndView;
     }
 
