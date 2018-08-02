@@ -2,24 +2,6 @@ body{
     background: #f2f2f2;
 }
 
-/*页面顶部*/
-.header{
-    padding: 0.2rem 0;
-    background: #fff;
-}
-
-.logo{
-    float: left;
-    width: 40%;
-    margin-left: 3%;
-}
-
-.search{
-    float: right;
-    width: 15%;
-    margin-right: 3%;
-}
-
 /*banner轮播样式*/
 .banner .swiper-wrapper,.banner .swiper-slide{
     height: inherit;
@@ -63,64 +45,4 @@ body{
     text-align: center;
     line-height: 30px;
     color: #555;
-}
-
-/*页面底部*/
-.footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background: #915419;
-    color: #fff;
-    text-align: center;
-    font-size: 10px;
-    padding: 10px 0;
-}
-
-.footer{
-    line-height: 18px;
-}
-
-/*搜索弹窗*/
-.searchPop{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #fff;
-}
-
-.searchDetail{
-    margin: 10px;
-    display: flex;
-    border: 1px solid #E1E1E1;
-    border-radius: 5px;
-}
-
-.searchIcon{
-    width: 17px;
-    margin: 6px 5px;
-}
-
-.searchInput{
-    flex: 1;
-}
-
-.searchInput input{
-    width: 100%;
-    border: 0;
-    outline: 0;
-    line-height: 30px;
-    height: 30px;
-    font-size: 14px;
-}
-
-.searchBtn{
-    width: 50px;
-    text-align: center;
-    line-height: 30px;
-    height: 30px;
-    font-size: 16px;
-    color: #737373;
 }
