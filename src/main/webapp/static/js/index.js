@@ -35,4 +35,5 @@ $(function () {
         var url = path + 'home/wages';
         window.location.href = url;
     })
+
 })
