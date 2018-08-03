@@ -1,0 +1,40 @@
+.wrapper{
+    height: 100%;
+    width: 100%;
+    background: url("../../static/images/loginBg.png");
+    background-size: 100% 100%;
+}
+
+.loginTitle{
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    margin-top: 22px;
+}
+
+.loginForm{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.loginForm input{
+    margin-bottom: 14px;
+    line-height: 40px;
+    height: 40px;
+    font-size: 14px;
+    width: 70%;
+    border-radius: 5px;
+    outline: 0;
+    border: 1px solid #535353;
+    padding-left: 40px;
+}
+
+.username{
+    background: url("../../static/images/username.png") no-repeat left 10px center;
+    background-size: 20px 20px;
+}
+
+.password{
+    background: url("../../static/images/password.png") no-repeat left 10px center;
+    background-size: 20px 20px;
+}

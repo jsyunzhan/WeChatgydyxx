@@ -7,7 +7,7 @@ function timestampToTime(timestamp) {
     h = date.getHours() + ':';
     m = date.getMinutes() + ':';
     s = date.getSeconds();
-    return Y+M+D+h+m+s;
+    return M+D;
 }
 
 // 居中效果

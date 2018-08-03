@@ -33,60 +33,7 @@
     <%--标题--%>
     <div class="titleList">
         <div class="listTitle">搜索结果</div>
-        <div class="list">
-            <div class="listChild">
-                <div>搜索结果搜索结果</div>
-                <div>06-23</div>
-            </div>
-            <div class="listChild">
-                <div>搜索结果搜索结果</div>
-                <div>06-23</div>
-            </div>
-            <div class="listChild">
-                <div>搜索结果搜索结果</div>
-                <div>06-23</div>
-            </div>
-            <div class="listChild">
-                <div>搜索结果搜索结果</div>
-                <div>06-23</div>
-            </div>
-            <div class="listChild">
-                <div>搜索结果搜索结果</div>
-                <div>06-23</div>
-            </div>
-            <div class="listChild">
-                <div>搜索结果搜索结果</div>
-                <div>06-23</div>
-            </div>
-            <div class="listChild">
-                <div>搜索结果搜索结果</div>
-                <div>06-23</div>
-            </div>
-            <div class="listChild">
-                <div>搜索结果搜索结果</div>
-                <div>06-23</div>
-            </div>
-            <div class="listChild">
-                <div>搜索结果搜索结果</div>
-                <div>06-23</div>
-            </div>
-            <div class="listChild">
-                <div>搜索结果搜索结果</div>
-                <div>06-23</div>
-            </div>
-            <div class="listChild">
-                <div>搜索结果搜索结果</div>
-                <div>06-23</div>
-            </div>
-            <div class="listChild">
-                <div>搜索结果搜索结果</div>
-                <div>06-23</div>
-            </div>
-            <div class="listChild">
-                <div>搜索结果搜索结果</div>
-                <div>06-23</div>
-            </div>
-        </div>
+        <div class="list"></div>
         <div class="more">
             查看更多<span><img src="${APP_PATH}/static/images/more.png"></span>
         </div>
@@ -103,6 +50,6 @@
 <script>
     var path  = '<%=request.getContextPath()%>';
     var data = "${url}";
-    console.log(data);
+    var title = "${title}";
 </script>
 </html>
