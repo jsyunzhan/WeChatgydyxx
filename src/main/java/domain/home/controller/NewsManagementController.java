@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping(value = "home/news")
@@ -40,9 +42,15 @@ public class NewsManagementController {
         return newsManagementService.newsList(newsEntity);
     }
 
-    @RequestMapping(value = "/details")
+    @RequestMapping(value = "/details/{id}")
     @ResponseBody
-    public NewsEntity newsDetails(@PathVariable("id") Long id){
-        return newsManagementService.newsDetails(id);
+    public ModelAndView newsDetails(@PathVariable("id") Long id){
+        final NewsEntity newsEntity = newsManagementService.newsDetails(id);
+        final Map<String, Object> map = new HashMap<>(4);
+        map.put("title",newsEntity.getTitle());
+        map.put("details",newsEntity.getDetails());
+        map.put("picturePath",newsEntity.getPicturePath());
+        map.put("createDate",newsEntity.getCreateDate());
+        return new ModelAndView("details",map);
     }
 }

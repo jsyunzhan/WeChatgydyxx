@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping(value = "home/notice")
@@ -50,8 +52,14 @@ public class NoticeManagementController {
 
     @RequestMapping(value = "/details/{id}")
     @ResponseBody
-    public NoticeEntity noticeDetails(@PathVariable("id") Long id){
-        return noticeManagementService.noticeDetails(id);
+    public ModelAndView noticeDetails(@PathVariable("id") Long id){
+        final NoticeEntity noticeEntity = noticeManagementService.noticeDetails(id);
+        final Map<String, Object> map = new HashMap<>(4);
+        map.put("title",noticeEntity.getTitle());
+        map.put("details",noticeEntity.getDetails());
+        map.put("picturePath",noticeEntity.getPicturePath());
+        map.put("createDate",noticeEntity.getCreateDate());
+        return new ModelAndView("details",map);
     }
 
 
