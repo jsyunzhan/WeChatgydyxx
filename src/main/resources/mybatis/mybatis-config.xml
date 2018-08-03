@@ -8,6 +8,7 @@
         <typeAlias alias="NoticeEntityInfo" type="domain.home.entity.NoticeEntity"/>
         <typeAlias alias="NewsEntityInfo" type="domain.home.entity.NewsEntity"/>
         <typeAlias alias="AccountEntityInfo" type="domain.shiro.entity.AccountEntity"/>
+        <typeAlias alias="WagesEntityInfo" type="domain.home.entity.WagesEntity"/>
     </typeAliases>
 
 </configuration>
