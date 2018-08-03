@@ -21,6 +21,7 @@
         <div class="loginForm">
             <input type="text" name="username" placeholder="账号" class="username">
             <input type="password" name="password" placeholder="密码" class="password">
+            <div class="error"></div>
         </div>
         <div class="submit">登录</div>
     </div>
