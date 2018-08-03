@@ -38,3 +38,9 @@
     background: url("../../static/images/password.png") no-repeat left 10px center;
     background-size: 20px 20px;
 }
+
+.submit{
+    line-height: 40px;
+    width: 30%;
+    font-size: 20px;
+}
