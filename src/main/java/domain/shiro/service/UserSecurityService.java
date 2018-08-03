@@ -6,4 +6,6 @@ public interface UserSecurityService {
     AccountEntity accoutInfoByOpenId(String openid);
 
     AccountEntity accoutInfoByLoginName(String loginName);
+
+    Boolean updateOpenId(String loginName,String openid);
 }

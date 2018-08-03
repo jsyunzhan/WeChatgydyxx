@@ -3,11 +3,13 @@ package domain.shiro.controller;
 import com.alibaba.fastjson.JSONObject;
 import domain.shiro.AuthUtil;
 import domain.shiro.entity.JsonResponseVO;
+import domain.shiro.service.UserSecurityService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,6 +27,14 @@ import java.net.URLEncoder;
 public class BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(BaseController.class);
 
+    final private UserSecurityService userSecurityService;
+
+
+
+    @Autowired
+    public BaseController(UserSecurityService userSecurityService){
+        this.userSecurityService = userSecurityService;
+    }
 
     /**
      * 首页
@@ -161,8 +171,7 @@ public class BaseController {
     @RequestMapping(value = "/nameAndUser/login")
     @ResponseBody
     public JsonResponseVO nameAndUserLogin(@RequestParam("loginName") String loginName,
-                                    @RequestParam("password") String password,HttpServletRequest request, HttpServletResponse response) throws IOException {
-        final String path = request.getContextPath();
+                                    @RequestParam("password") String password,HttpServletRequest request) throws IOException {
 
         if (LOGGER.isDebugEnabled()) {
             LOGGER.debug("登录认证,loginName:{}", loginName);
@@ -175,9 +184,12 @@ public class BaseController {
 
         try {
             UsernamePasswordToken token = new UsernamePasswordToken(loginName, password);
-
             securitySubject.login(token);
-            result.setSuccess(Boolean.TRUE);
+
+
+            final String openid = request.getSession().getAttribute("openid").toString();
+            final Boolean flag = userSecurityService.updateOpenId(loginName,openid);
+            result.setSuccess(flag);
             // rememberme
             token.setRememberMe(true);
         }   catch (UnknownAccountException ex) {

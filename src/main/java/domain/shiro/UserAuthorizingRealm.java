@@ -8,6 +8,10 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 
 import static domain.shiro.entity.SystemConfig.LOGIN_SESSION;
 import static org.apache.shiro.SecurityUtils.getSubject;
@@ -42,6 +46,8 @@ public class UserAuthorizingRealm extends AuthorizingRealm{
             if (null != accountEntity){
                 accountEntity.setPassword("");
             }else {
+                HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+                request.getSession().setAttribute("openid",loginNameOrOpenid);
                 throw new DisabledAccountException("openid不存在.");
             }
 

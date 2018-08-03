@@ -1,6 +1,7 @@
 package domain.shiro.dao;
 
 import domain.shiro.entity.AccountEntity;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -18,4 +19,12 @@ public interface AccountDao {
      * @return
      */
     AccountEntity accoutInfoByLoginName(String loginName);
+
+    /**
+     * 根据名称给openid赋值
+     * @param loginName
+     * @param openid
+     * @return
+     */
+    Integer updateOpenId(@Param("loginName") String loginName,@Param("openid") String openid);
 }

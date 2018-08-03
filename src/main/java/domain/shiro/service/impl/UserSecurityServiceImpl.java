@@ -27,4 +27,9 @@ public class UserSecurityServiceImpl implements UserSecurityService{
     public AccountEntity accoutInfoByLoginName(String loginName) {
         return accountDao.accoutInfoByLoginName(loginName);
     }
+
+    @Override
+    public Boolean updateOpenId(String loginName,String openid) {
+        return accountDao.updateOpenId(loginName,openid) > 0;
+    }
 }

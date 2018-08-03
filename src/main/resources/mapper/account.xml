@@ -38,4 +38,10 @@
         where t.LOGIN_NAME=#{loginName} AND t.DELETE_FLAG='1'
     </select>
 
+    <update id="updateOpenId">
+        UPDATE t_sys_account SET
+        OPEN_ID=#{openid},
+        UPDATE_DATA=NOW()
+        WHERE LOGIN_NAME=#{loginName}
+    </update>
 </mapper>
