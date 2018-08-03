@@ -100,15 +100,15 @@ public class BaseController {
 
 
         String openid = jsonObject.getString("openid");
-        String token = jsonObject.getString("access_token");
-
-        String infoUrl = "https://api.weixin.qq.com/sns/userinfo?access_token=" + token +
-                "&openid=" + openid +
-                "&lang=zh_CN";
-
-        JSONObject userInfo = AuthUtil.doGetJson(infoUrl);
-
-        final String imgUrl = userInfo.getString("headimgurl");
+//        String token = jsonObject.getString("access_token");
+//
+//        String infoUrl = "https://api.weixin.qq.com/sns/userinfo?access_token=" + token +
+//                "&openid=" + openid +
+//                "&lang=zh_CN";
+//
+//        JSONObject userInfo = AuthUtil.doGetJson(infoUrl);
+//
+//        final String imgUrl = userInfo.getString("headimgurl");
 
         userLogin(openid,"","",request,response);
 
@@ -164,8 +164,6 @@ public class BaseController {
      * @param loginName
      * @param password
      * @param request
-     * @param response
-     * @return
      * @throws IOException
      */
     @RequestMapping(value = "/nameAndUser/login")
