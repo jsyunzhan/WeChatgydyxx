@@ -48,6 +48,61 @@
     <!--开启事务注解扫描-->
     <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
 
+    <!-- 安全管理器 -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <!-- 配置 Realm. -->
+        <property name="realm" ref="jdbcRealm"/>
+        <!-- 配置 CacheManager. 缓存-->
+        <property name="cacheManager" ref="cacheManager"/>
+    </bean>
 
+    <!--
+    配置 CacheManager. 缓存
+    -->
+    <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:ehcache.xml"/>
+    </bean>
+
+    <!-- 自定义Realm实现 -->
+    <bean id="jdbcRealm" class="domain.shiro.UserAuthorizingRealm">
+    </bean>
+
+    <!-- Shiro 生命周期处理器,，保证实现shiro内部的生命周期函数bean的执行 -->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <!--
+    启用 IOC 容器中使用 shiro 的注解. 但必须在配置了 LifecycleBeanPostProcessor 之后才可以使用.
+    -->
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+          depends-on="lifecycleBeanPostProcessor"/>
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+
+    <!-- Shiro Filter 拦截器相关配置 -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <!-- securityManager -->
+        <property name="securityManager" ref="securityManager"/>
+        <!-- 重新登录路径 -->
+        <property name="loginUrl" value="/security/movetologin"/>
+        <!-- 用户访问无权限的链接时跳转此页面  -->
+        <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
+        <!-- 验证成功跳转此页面  -->
+        <property name="successUrl" value="/security/home"/>
+        <!-- 过滤链定义 -->
+        <property name="filterChainDefinitions">
+            <value><!-- 注意拦截顺序，从上往下依次设置-->
+                /nameAndUser/login = anon
+                /security/backUrl = anon
+                /static/** = anon
+                /home/login = anon
+                / = anon
+                <!--/WEB-INF/page= anon-->
+                /shiro/logout = logout
+                /** = authc
+
+            </value>
+        </property>
+    </bean>
 
 </beans>

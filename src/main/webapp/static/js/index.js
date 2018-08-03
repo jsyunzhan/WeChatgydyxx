@@ -21,4 +21,8 @@ $(function () {
         window.location.href = url;
     })
 
+    $(".Mchild:nth-child(3)").click(function(){
+        var url = path + '/home/wages/listpage';
+        window.location.href = url;
+    })
 })
