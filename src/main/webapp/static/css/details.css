@@ -1,0 +1,67 @@
+.titleList{
+    padding-top: 10px;
+}
+
+.listTitle{
+    text-align: left;
+    line-height: 30px;
+    font-size: 18px;
+    font-family: '黑体';
+    margin: 0px 3%;
+}
+
+.textInfor{
+    width: 94%;
+    padding: 0 3%;
+    border-bottom: 1px solid #C3C3C3;
+}
+
+.textInfor div{
+    float: left;
+    width: 33.33%;
+    line-height: 12px;
+    font-size: 12px;
+    margin: 4px auto;
+    border-left: 1px solid #656565;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.textInfor div:nth-child(1){
+    border-left: 0;
+}
+
+.Paging{
+    width: 94%;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.Paging div{
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 5px;
+}
+
+.Paging .preBtn,.Paging .nextBtn{
+    width: 70%;
+    line-height: 30px;
+    height: 30px;
+    margin: 10px auto;
+    text-align: center;
+    border: 1px solid #915419;
+    color: #fff;
+}
+
+.Paging .preBtn{
+    color: #915419;
+}
+
+.Paging .nextBtn{
+    background: #915419;
+}

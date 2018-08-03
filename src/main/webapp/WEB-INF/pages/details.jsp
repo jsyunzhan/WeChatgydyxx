@@ -17,7 +17,6 @@
 </head>
 <body>
 <div class="wrapper">
-
     <%--头部--%>
     <div class="header clearfix">
         <%--Logo--%>
@@ -34,7 +33,16 @@
     <%--标题--%>
     <div class="titleList">
         <div class="listTitle">搜索结果</div>
-        <div class="content"></div>
+        <div class="textInfor clearfix">
+            <div>发表：<span>2018-08-03</span></div>
+            <div>来源：<span>本站资源</span></div>
+            <div>点击量：<span>325673</span></div>
+        </div>
+        <div class="textCon"></div>
+        <div class="Paging">
+            <div class="preBtn">上一篇：学校动态</div>
+            <div class="nextBtn">下一篇：学校动态</div>
+        </div>
     </div>
     <%--页面底部--%>
     <div class="footer">
@@ -48,5 +56,6 @@
     var path  = '<%=request.getContextPath()%>';
     var data = "${url}";
     var title = "${title}";
+    var details = "${details}";
 </script>
 </html>

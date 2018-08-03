@@ -14,8 +14,7 @@ $(function(){
                     if (serverResponse.success) {
                         location.href = path + "/home/alert";
                     } else {
-                        $("#userError").text(serverResponse.reason);
-                        $("#userError").addClass("red_1");
+                        $(".error").text(serverResponse.reason);
                     }
                 },
                 error: function (xmlHttpReq, textStatus, errorThrow) {
