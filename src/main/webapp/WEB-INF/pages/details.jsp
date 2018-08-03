@@ -17,6 +17,7 @@
 </head>
 <body>
 <div class="wrapper">
+
     <%--头部--%>
     <div class="header clearfix">
         <%--Logo--%>
@@ -33,8 +34,7 @@
     <%--标题--%>
     <div class="titleList">
         <div class="listTitle">搜索结果</div>
-        <div class="content">
-        </div>
+        <div class="content"></div>
     </div>
     <%--页面底部--%>
     <div class="footer">
