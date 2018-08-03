@@ -8,11 +8,11 @@
     %>
     <link rel="stylesheet" href="${APP_PATH}/static/css/public.css">
     <link rel="stylesheet" href="${APP_PATH}/static/css/publicPart.css">
-    <link rel="stylesheet" href="${APP_PATH}/static/css/list.css">
+    <link rel="stylesheet" href="${APP_PATH}/static/css/details.css">
     <script src="${APP_PATH}/static/jq/jquery-1.12.4.min.js"></script>
     <script src="${APP_PATH}/static/js/pop.js"></script>
     <script src="${APP_PATH}/static/js/public.js"></script>
-    <script src="${APP_PATH}/static/js/list.js"></script>
+    <script src="${APP_PATH}/static/js/details.js"></script>
     <title>高邮第一实验小学</title>
 </head>
 <body>
@@ -32,12 +32,9 @@
     </div>
     <%--标题--%>
     <div class="titleList">
-        <div class="listTitle"></div>
-        <div class="list"></div>
-        <div class="more">
-            查看更多<span><img src="${APP_PATH}/static/images/more.png"></span>
+        <div class="listTitle">搜索结果</div>
+        <div class="content">
         </div>
-        <div class="nomore">没有更多了~~</div>
     </div>
     <%--页面底部--%>
     <div class="footer">

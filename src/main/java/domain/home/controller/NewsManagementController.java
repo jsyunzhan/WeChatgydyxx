@@ -40,7 +40,7 @@ public class NewsManagementController {
         return newsManagementService.newsList(newsEntity);
     }
 
-    @RequestMapping(value = "/details")
+    @RequestMapping(value = "/details/{id}")
     @ResponseBody
     public NewsEntity newsDetails(@PathVariable("id") Long id){
         return newsManagementService.newsDetails(id);
