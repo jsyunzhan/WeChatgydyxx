@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="domain.home.dao.NoticeDao">
+<mapper namespace="domain.home.dao.InternalDao">
 
     <resultMap id="ResultNoticeEntityInfo" type="NoticeEntityInfo">
         <result property="details" column="NOTICE_DETAILS" typeHandler="domain.home.entity.ConvertBlobTypeHandler"/>
     </resultMap>
 
     <!--查询集合-->
-    <select id="noticelist" resultMap="ResultNoticeEntityInfo">
+    <select id="internalList" resultMap="ResultNoticeEntityInfo">
         SELECT
         t.ID id,
         t.NOTICE_TITLE title,
@@ -19,23 +19,8 @@
         t.UPDATE_USER_ID updateUserId,
         t.UPDATE_DATA updateDate
         FROM t_home_notice t
-        WHERE t.DELETE_FLAG='1' AND t.NOTICE_FLAG='1'
+        WHERE t.DELETE_FLAG='1' AND t.NOTICE_FLAG='0'
         ORDER BY t.CREATE_DATA
-    </select>
-
-
-    <select id="noticeDetails" resultMap="ResultNoticeEntityInfo">
-        SELECT
-        t.ID id,
-        t.NOTICE_TITLE title,
-        t.NOTICE_DETAILS,
-        t.PICTURE_PATH picturePath,
-        t.CREATE_USER_ID createUserId,
-        t.CREATE_DATA createDate,
-        t.UPDATE_USER_ID updateUserId,
-        t.UPDATE_DATA updateDate
-        FROM t_home_notice t
-        WHERE t.DELETE_FLAG='1' AND t.id=#{id}
     </select>
 
 </mapper>
