@@ -15,6 +15,9 @@ $(function(){
                         location.href = path + "/home/alert";
                     } else {
                         $(".error").text(serverResponse.reason);
+                        $(".loginForm input").bind("change propertychange input",function () {
+                            $(".error").text("");
+                        })
                     }
                 },
                 error: function (xmlHttpReq, textStatus, errorThrow) {
@@ -22,7 +25,8 @@ $(function(){
                 }
             });
         }
-
     })
+
+
 
 })

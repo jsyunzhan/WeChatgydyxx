@@ -45,8 +45,13 @@ $(function () {
             "params": {},
             "events": {}
         },false);
+        $(".searchBtn").click(function () {
+            var title = $(".searchInput input").val();
+            var url = path + "/homepage/home/search?title=" + title;
+            window.location.href = url;
+        });
         $("#maskLayer").click(function () {
             popdown(search);
-        })
+        });
     });
 })

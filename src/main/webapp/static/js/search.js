@@ -4,25 +4,22 @@ $(function () {
     $(".listTitle").text(title);
 
     // 请求
-    $.ajax({
-        url:path+'/homepage/'+ data + '/list',
-        type:"GET",dataType:"json",
-        success:function (event) {
-            console.log(event);
-            var _html = "";
-            for(var i=0;i<event.length;i++){
-                _html += '<div class="listChild" name="'+event[i].id+'"><div>'+event[i].title+'</div><div>'+timestampToTime(event[i].createDate)+'</div></div>';
-            }
-            $(".list").append(_html);
-            showMore(5);
-
-            // 跳转详情
-            $(".listChild").click(function () {
-                var url = path + '/homepage/'+ data + '/details/' + $(this).attr("name");
-                window.location.href = url;
-            })
+    function search(){
+        var _html = "";
+        for(var i=0;i<jsString.length;i++){
+            _html += '<div class="listChild" name="'+jsString[i].tableId+'" url="'+jsString[i].url+'"><div>'+jsString[i].title+'</div><div>'+timestampToTime(jsString[i].createDate)+'</div></div>';
         }
-    });
+        $(".list").append(_html);
+        showMore(5);
+
+        // 跳转详情
+        $(".listChild").click(function () {
+            var url = path + $(this).attr("url") + $(this).attr("name");
+            window.location.href = url;
+        });
+    }
+    search();
+
 
     // 更多
     function showMore(showNum){

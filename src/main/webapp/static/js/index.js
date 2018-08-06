@@ -9,20 +9,19 @@ $(function () {
 
     // 功能模块跳转
     $(".Mchild:nth-child(1)").click(function(){
-        var url = path + '/home/notice/listpage';
+        var url = path + '/homepage/notice/listpage';
         window.location.href = url;
     });
     $(".Mchild:nth-child(2)").click(function(){
-        var url = path + '/home/news/listpage';
+        var url = path + '/homepage/news/listpage';
         window.location.href = url;
     });
     $(".Mchild:nth-child(3)").click(function(){
-        var url = path + '/home/wages';
+        // var url = path + '/homepage/wages';
+        // window.location.href = url;
+    });
+    $(".Mchild:nth-child(4)").click(function(){
+        var url = path + '/homepage/internal/listpage';
         window.location.href = url;
-    })
-
-    $(".Mchild:nth-child(3)").click(function(){
-        var url = path + '/home/wages/listpage';
-        window.location.href = url;
-    })
-})
+    });
+});
