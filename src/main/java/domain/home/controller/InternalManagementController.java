@@ -21,6 +21,7 @@ public class InternalManagementController extends AbstractActionController{
         this.internalManagementService = internalManagementService;
     }
 
+
     @RequestMapping(value = "/listpage")
     public ModelAndView index(){
         final ModelAndView modelAndView = new ModelAndView("list");
