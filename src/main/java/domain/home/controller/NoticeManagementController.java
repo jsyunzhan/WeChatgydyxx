@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping(value = "home/notice")
+@RequestMapping(value = "homepage/notice")
 public class NoticeManagementController {
     private static final Logger LOGGER = LoggerFactory.getLogger(NoticeManagementController.class);
 

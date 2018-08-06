@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping(value = "home/internal")
+@RequestMapping(value = "homepage/internal")
 public class InternalManagementController extends AbstractActionController{
 
     final private InternalManagementService internalManagementService;

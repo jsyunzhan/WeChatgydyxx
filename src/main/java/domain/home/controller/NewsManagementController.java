@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping(value = "home/news")
+@RequestMapping(value = "homepage/news")
 public class NewsManagementController {
 
     final private NewsManagementService newsManagementService;
