@@ -42,6 +42,7 @@ public class InternalManagementController extends AbstractActionController{
         return internalManagementService.internalList(noticeEntity);
     }
 
+
     @RequestMapping(value = "/details/{id}")
     @ResponseBody
     public ModelAndView internalDetails(@PathVariable("id") Long id){
