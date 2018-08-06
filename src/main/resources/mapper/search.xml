@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="domain.home.dao.SearchDao">
+
+    <select id="searchList" resultType="SearchEntityInfo">
+        SELECT
+        t.ID id,
+        t.TABLE_ID tableId,
+        t.TITLE title,
+        t.URL url,
+        t.CREATE_DATA createDate
+        FROM t_home_search t
+        WHERE t.TITLE like concat(concat('%',#{title}),'%')
+        AND t.URL IN ('/homepage/notice/details/','/homepage/news/details/')
+    </select>
+
+</mapper>
