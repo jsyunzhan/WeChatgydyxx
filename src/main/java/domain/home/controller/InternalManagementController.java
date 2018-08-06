@@ -23,11 +23,16 @@ public class InternalManagementController extends AbstractActionController{
 
     @RequestMapping(value = "/listpage")
     public ModelAndView index(){
-        return new ModelAndView("internal");
+        final ModelAndView modelAndView = new ModelAndView("list");
+        modelAndView.addObject("url","internal");
+        modelAndView.addObject("title","内部公示");
+        return modelAndView;
     }
 
     @RequestMapping(value = "/list")
     public List<NoticeEntity> internalList(NoticeEntity noticeEntity){
         return internalManagementService.internalList(noticeEntity);
     }
+
+
 }
