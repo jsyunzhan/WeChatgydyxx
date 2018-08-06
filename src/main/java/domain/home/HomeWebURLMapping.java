@@ -4,6 +4,7 @@ public final class HomeWebURLMapping {
     private HomeWebURLMapping(){
     }
 
+
     public static final String HOME_ROOT = "/home/";
 
     /*******************通知管理*************************/
