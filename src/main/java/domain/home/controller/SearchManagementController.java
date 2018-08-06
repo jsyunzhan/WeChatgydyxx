@@ -25,7 +25,6 @@ public class SearchManagementController {
     }
 
 
-
     @RequestMapping(value = "/homepage/home/search")
     @ResponseBody
     public ModelAndView searchList(@RequestParam("title") String title){
