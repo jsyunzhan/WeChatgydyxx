@@ -74,7 +74,7 @@ public class BaseController {
         }
 
         //开发
-        String backUrl = "http://192.168.199.111:80"+request.getContextPath()+"/security/backUrl";
+        String backUrl = "http://192.168.199.108:80"+request.getContextPath()+"/security/backUrl";
 
         //测试
 //        String backUrl = "http://jy.gylzzx.cn:8888"+request.getContextPath()+"/security/backUrl";
