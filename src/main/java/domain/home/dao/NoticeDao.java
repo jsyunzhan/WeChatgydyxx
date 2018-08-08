@@ -16,5 +16,6 @@ public interface NoticeDao {
 
     NoticeEntity noticeDetails(Long id);
 
-    InternalDao updateCout(Long id);
+
+    Integer updateCount(Long id);
 }

@@ -30,7 +30,7 @@ public class NoticeManagementServiceImpl implements NoticeManagementService{
 
     @Override
     public NoticeEntity noticeDetails(Long id) {
-        noticeDao.updateCout(id);
+        noticeDao.updateCount(id);
         return noticeDao.noticeDetails(id);
     }
 }

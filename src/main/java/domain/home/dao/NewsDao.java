@@ -11,5 +11,5 @@ public interface NewsDao {
 
     NewsEntity newsDetails(Long id);
 
-    Integer updateCout(Long id);
+    Integer updateCount(Long id);
 }

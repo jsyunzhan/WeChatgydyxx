@@ -39,7 +39,7 @@
         WHERE t.DELETE_FLAG='1' AND t.id=#{id}
     </select>
 
-    <update id="updateCout">
+    <update id="updateCount">
         UPDATE t_home_notice SET
         CLICK_COUNT=CLICK_COUNT+1
         WHERE ID=#{id}
