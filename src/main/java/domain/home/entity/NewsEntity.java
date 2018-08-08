@@ -13,6 +13,9 @@ public class NewsEntity extends AbstractEntity{
     //新闻内容
     private String details;
 
+    //点击次数
+    private Long clickCount;
+
     //图片地址
     private String picturePath;
 

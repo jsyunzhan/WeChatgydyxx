@@ -10,4 +10,6 @@ public interface NewsDao {
     List<NewsEntity> newsList(NewsEntity newsEntity);
 
     NewsEntity newsDetails(Long id);
+
+    Integer updateCout(Long id);
 }

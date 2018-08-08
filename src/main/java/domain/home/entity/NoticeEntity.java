@@ -17,6 +17,8 @@ public class NoticeEntity extends AbstractEntity{
     //公告内容
     private String details;
 
+    private Long clickCount;
+
     //图片地址
     private String picturePath;
 

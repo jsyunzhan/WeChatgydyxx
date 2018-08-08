@@ -27,6 +27,7 @@ public class NewsManagementServiceImpl implements NewsManagementService{
 
     @Override
     public NewsEntity newsDetails(Long id) {
+        newsDao.updateCout(id);
         return newsDao.newsDetails(id);
     }
 }

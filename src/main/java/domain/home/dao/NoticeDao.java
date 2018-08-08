@@ -15,4 +15,6 @@ public interface NoticeDao {
     List<NoticeEntity> noticelist(NoticeEntity noticeEntity);
 
     NoticeEntity noticeDetails(Long id);
+
+    InternalDao updateCout(Long id);
 }

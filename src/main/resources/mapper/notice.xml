@@ -30,6 +30,7 @@
         t.NOTICE_TITLE title,
         t.NOTICE_DETAILS,
         t.PICTURE_PATH picturePath,
+        t.CLICK_COUNT clickCount,
         t.CREATE_USER_ID createUserId,
         t.CREATE_DATA createDate,
         t.UPDATE_USER_ID updateUserId,
@@ -37,5 +38,11 @@
         FROM t_home_notice t
         WHERE t.DELETE_FLAG='1' AND t.id=#{id}
     </select>
+
+    <update id="updateCout">
+        UPDATE t_home_notice SET
+        CLICK_COUNT=CLICK_COUNT+1
+        WHERE ID=#{id}
+    </update>
 
 </mapper>

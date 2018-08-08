@@ -67,12 +67,13 @@ public class NewsManagementController {
 
 
 
-        final Map<String, Object> map = new HashMap<>(7);
+        final Map<String, Object> map = new HashMap<>(8);
         map.put("title",newsEntity.getTitle());
         map.put("details",newsEntity.getDetails());
         map.put("prevId",prevId);
         map.put("nextId",nextId);
         map.put("url","news");
+        map.put("clickCount",newsEntity.getClickCount());
         map.put("picturePath",newsEntity.getPicturePath());
         map.put("createDate",newsEntity.getCreateDate().getTime());
         return new ModelAndView("details",map);
