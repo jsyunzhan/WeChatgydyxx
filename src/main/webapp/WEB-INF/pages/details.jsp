@@ -54,8 +54,8 @@
 </body>
 <script>
     var path  = '<%=request.getContextPath()%>';
-    var data = "${url}";
     var title = "${title}";
     var details = "${details}";
+    var picturePath = '${picturePath}';
 </script>
 </html>
