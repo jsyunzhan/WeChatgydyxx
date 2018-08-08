@@ -32,9 +32,9 @@
     </div>
     <%--标题--%>
     <div class="titleList">
-        <div class="listTitle">搜索结果</div>
+        <div class="listTitle"></div>
         <div class="textInfor clearfix">
-            <div>发表：<span>2018-08-03</span></div>
+            <div>发表：<span></span></div>
             <div>来源：<span>本站资源</span></div>
             <div>点击量：<span>325673</span></div>
         </div>
@@ -57,5 +57,9 @@
     var title = "${title}";
     var details = "${details}";
     var picturePath = '${picturePath}';
+    var urlPart = '${url}';
+    var prev = '${prevId}';
+    var next = '${nextId}';
+    var createDate = '${createDate}';
 </script>
 </html>
