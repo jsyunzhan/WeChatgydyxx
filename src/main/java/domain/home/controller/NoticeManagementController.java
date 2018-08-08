@@ -1,5 +1,6 @@
 package domain.home.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import domain.home.entity.NoticeEntity;
 import domain.home.service.NoticeManagementService;
 import org.slf4j.Logger;
@@ -72,15 +73,14 @@ public class NoticeManagementController {
 
             }
         }
-        final Map<String, Object> map = new HashMap<>(8);
+        final Map<String, Object> map = new HashMap<>(7);
         map.put("title",noticeEntity.getTitle());
         map.put("details",noticeEntity.getDetails());
         map.put("prevId",prevId);
         map.put("nextId",nextId);
         map.put("url","notice");
-        map.put("createDate",noticeEntity.getCreateDate());
+        map.put("createDate", JSONObject.toJSON(noticeEntity.getCreateDate()));
         map.put("picturePath",noticeEntity.getPicturePath());
-        map.put("createDate",noticeEntity.getCreateDate());
         return new ModelAndView("details",map);
     }
 
