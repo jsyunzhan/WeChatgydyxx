@@ -54,8 +54,8 @@ public class NewsManagementController {
         String prevTitile = "";
         String nextTitile = "";
         for (int i=0;i<newsEntities.size();i++){
-            if (newsEntities.get(i).getId().equals(id)){
-                if (i==0){
+            if (newsEntities.get(i).getId().equals(id)&&newsEntities.size()!=1){
+                if (i==0&&i!=newsEntities.size()-1){
                     nextId = newsEntities.get(i+1).getId();
                     nextTitile = newsEntities.get(i+1).getTitle();
                 }else if (i==newsEntities.size()-1){

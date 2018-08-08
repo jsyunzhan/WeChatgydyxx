@@ -63,7 +63,7 @@ public class NoticeManagementController {
         String prevTitile = "";
         String nextTitile = "";
         for (int i=0;i<noticeEntities.size();i++){
-            if (noticeEntities.get(i).getId().equals(id)){
+            if (noticeEntities.get(i).getId().equals(id)&&noticeEntities.size()!=1){
                 if (i==0){
                     nextId = noticeEntities.get(i+1).getId();
                     nextTitile = noticeEntities.get(i+1).getTitle();
