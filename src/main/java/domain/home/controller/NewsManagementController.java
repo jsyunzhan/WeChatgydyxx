@@ -51,15 +51,21 @@ public class NewsManagementController {
 
         Long prevId = 0L;
         Long nextId = 0L;
+        String prevTitile = "";
+        String nextTitile = "";
         for (int i=0;i<newsEntities.size();i++){
             if (newsEntities.get(i).getId().equals(id)){
                 if (i==0){
                     nextId = newsEntities.get(i+1).getId();
+                    nextTitile = newsEntities.get(i+1).getTitle();
                 }else if (i==newsEntities.size()-1){
                     prevId = newsEntities.get(i-1).getId();
+                    prevTitile = newsEntities.get(i-1).getTitle();
                 }else {
                     nextId = newsEntities.get(i+1).getId();
                     prevId = newsEntities.get(i-1).getId();
+                    nextTitile = newsEntities.get(i+1).getTitle();
+                    prevTitile = newsEntities.get(i-1).getTitle();
                 }
 
             }
@@ -67,11 +73,13 @@ public class NewsManagementController {
 
 
 
-        final Map<String, Object> map = new HashMap<>(8);
+        final Map<String, Object> map = new HashMap<>(10);
         map.put("title",newsEntity.getTitle());
         map.put("details",newsEntity.getDetails());
         map.put("prevId",prevId);
         map.put("nextId",nextId);
+        map.put("prevTitile",prevTitile);
+        map.put("nextTitile",nextTitile);
         map.put("url","news");
         map.put("clickCount",newsEntity.getClickCount());
         map.put("picturePath",newsEntity.getPicturePath());

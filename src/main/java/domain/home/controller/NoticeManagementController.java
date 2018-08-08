@@ -60,26 +60,34 @@ public class NoticeManagementController {
 
         Long prevId = 0L;
         Long nextId = 0L;
+        String prevTitile = "";
+        String nextTitile = "";
         for (int i=0;i<noticeEntities.size();i++){
             if (noticeEntities.get(i).getId().equals(id)){
                 if (i==0){
                     nextId = noticeEntities.get(i+1).getId();
+                    nextTitile = noticeEntities.get(i+1).getTitle();
                 }else if (i==noticeEntities.size()-1){
                     prevId = noticeEntities.get(i-1).getId();
+                    prevTitile = noticeEntities.get(i-1).getTitle();
                 }else {
                     nextId = noticeEntities.get(i+1).getId();
                     prevId = noticeEntities.get(i-1).getId();
+                    nextTitile = noticeEntities.get(i+1).getTitle();
+                    prevTitile = noticeEntities.get(i-1).getTitle();
                 }
 
             }
         }
 
 
-        final Map<String, Object> map = new HashMap<>(8);
+        final Map<String, Object> map = new HashMap<>(10);
         map.put("title",noticeEntity.getTitle());
         map.put("details",noticeEntity.getDetails());
         map.put("prevId",prevId);
         map.put("nextId",nextId);
+        map.put("prevTitile",prevTitile);
+        map.put("nextTitile",nextTitile);
         map.put("url","notice");
         map.put("clickCount",noticeEntity.getClickCount());
         map.put("createDate", noticeEntity.getCreateDate().getTime());
