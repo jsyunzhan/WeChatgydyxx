@@ -36,7 +36,7 @@
         <div class="textInfor clearfix">
             <div>发表：<span></span></div>
             <div>来源：<span>本站资源</span></div>
-            <div>点击量：<span>325673</span></div>
+            <div>点击量：<span>${clickCount}</span></div>
         </div>
         <div class="textCon"></div>
         <div class="Paging">
@@ -60,6 +60,7 @@
     var urlPart = '${url}';
     var prev = '${prevId}';
     var next = '${nextId}';
-    var createDate = '${createDate}';
+    var createDate = ${createDate};
+
 </script>
 </html>

@@ -38,6 +38,7 @@ public class InternalManagementController extends AbstractActionController{
     }
 
     @RequestMapping(value = "/list")
+    @ResponseBody
     public List<NoticeEntity> internalList(NoticeEntity noticeEntity){
         return internalManagementService.internalList(noticeEntity);
     }
