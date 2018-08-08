@@ -46,9 +46,30 @@ public class NewsManagementController {
     @ResponseBody
     public ModelAndView newsDetails(@PathVariable("id") Long id){
         final NewsEntity newsEntity = newsManagementService.newsDetails(id);
-        final Map<String, Object> map = new HashMap<>(4);
+        final NewsEntity newsEntityQuery = new NewsEntity();
+        final List<NewsEntity> newsEntities = newsManagementService.newsList(newsEntityQuery);
+
+        Long lastId = 0L;
+        Long nextId = 0L;
+        for (int i=0;i<newsEntities.size();i++){
+            if (newsEntities.get(i).getId().equals(id)){
+                if (i==0){
+                    nextId = newsEntities.get(i+1).getId();
+                }else if (i==newsEntities.size()-1){
+                    lastId = newsEntities.get(i-1).getId();
+                }else {
+                    nextId = newsEntities.get(i+1).getId();
+                    lastId = newsEntities.get(i-1).getId();
+                }
+
+            }
+        }
+
+        final Map<String, Object> map = new HashMap<>(6);
         map.put("title",newsEntity.getTitle());
         map.put("details",newsEntity.getDetails());
+        map.put("lastId",lastId);
+        map.put("nextId",nextId);
         map.put("picturePath",newsEntity.getPicturePath());
         map.put("createDate",newsEntity.getCreateDate());
         return new ModelAndView("details",map);

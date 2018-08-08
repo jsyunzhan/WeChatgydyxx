@@ -54,9 +54,29 @@ public class NoticeManagementController {
     @ResponseBody
     public ModelAndView noticeDetails(@PathVariable("id") Long id){
         final NoticeEntity noticeEntity = noticeManagementService.noticeDetails(id);
-        final Map<String, Object> map = new HashMap<>(4);
+        final NoticeEntity noticeEntityQuery = new NoticeEntity();
+        final List<NoticeEntity> noticeEntities = noticeManagementService.noticelist(noticeEntityQuery);
+
+        Long lastId = 0L;
+        Long nextId = 0L;
+        for (int i=0;i<noticeEntities.size();i++){
+            if (noticeEntities.get(i).getId().equals(id)){
+                if (i==0){
+                    nextId = noticeEntities.get(i+1).getId();
+                }else if (i==noticeEntities.size()-1){
+                    lastId = noticeEntities.get(i-1).getId();
+                }else {
+                    nextId = noticeEntities.get(i+1).getId();
+                    lastId = noticeEntities.get(i-1).getId();
+                }
+
+            }
+        }
+        final Map<String, Object> map = new HashMap<>(6);
         map.put("title",noticeEntity.getTitle());
         map.put("details",noticeEntity.getDetails());
+        map.put("lastId",lastId);
+        map.put("nextId",nextId);
         map.put("picturePath",noticeEntity.getPicturePath());
         map.put("createDate",noticeEntity.getCreateDate());
         return new ModelAndView("details",map);
