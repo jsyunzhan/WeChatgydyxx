@@ -1,6 +1,5 @@
 package domain.home.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import domain.home.entity.NoticeEntity;
 import domain.home.service.NoticeManagementService;
 import org.slf4j.Logger;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,7 +53,7 @@ public class NoticeManagementController {
 
     @RequestMapping(value = "/details/{id}")
     @ResponseBody
-    public ModelAndView noticeDetails(@PathVariable("id") Long id){
+    public ModelAndView noticeDetails(@PathVariable("id") Long id) throws ParseException {
         final NoticeEntity noticeEntity = noticeManagementService.noticeDetails(id);
         final NoticeEntity noticeEntityQuery = new NoticeEntity();
         final List<NoticeEntity> noticeEntities = noticeManagementService.noticelist(noticeEntityQuery);
@@ -73,13 +73,15 @@ public class NoticeManagementController {
 
             }
         }
+
+
         final Map<String, Object> map = new HashMap<>(7);
         map.put("title",noticeEntity.getTitle());
         map.put("details",noticeEntity.getDetails());
         map.put("prevId",prevId);
         map.put("nextId",nextId);
         map.put("url","notice");
-        map.put("createDate", JSONObject.toJSON(noticeEntity.getCreateDate()));
+        map.put("createDate", noticeEntity.getCreateDate().getTime());
         map.put("picturePath",noticeEntity.getPicturePath());
         return new ModelAndView("details",map);
     }

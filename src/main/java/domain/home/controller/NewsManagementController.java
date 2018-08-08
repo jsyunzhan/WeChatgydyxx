@@ -65,6 +65,8 @@ public class NewsManagementController {
             }
         }
 
+
+
         final Map<String, Object> map = new HashMap<>(7);
         map.put("title",newsEntity.getTitle());
         map.put("details",newsEntity.getDetails());
@@ -72,7 +74,7 @@ public class NewsManagementController {
         map.put("nextId",nextId);
         map.put("url","news");
         map.put("picturePath",newsEntity.getPicturePath());
-        map.put("createDate",newsEntity.getCreateDate());
+        map.put("createDate",newsEntity.getCreateDate().getTime());
         return new ModelAndView("details",map);
     }
 }
