@@ -58,8 +58,8 @@
     var details = "${details}";
     var picturePath = '${picturePath}';
     var urlPart = '${url}';
-    var prev = '${prevId}';
-    var next = '${nextId}';
+    var prev = ${prevId};
+    var next = ${nextId};
     var createDate = ${createDate};
 
 </script>

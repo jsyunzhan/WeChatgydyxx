@@ -28,6 +28,12 @@ $(function () {
     // 上一篇下一篇
     $(".preBtn").attr("name",prev);
     $(".nextBtn").attr("name",next);
+    if(prev == 0){
+        $(".preBtn").hide();
+    }
+    if (next == 0){
+        $(".nextBtn").hide();
+    }
     $(".Paging div").click(function () {
         var id = $(this).attr("name");
         if (id!=0){
