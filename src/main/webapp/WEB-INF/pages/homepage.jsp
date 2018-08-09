@@ -35,14 +35,6 @@
         <%--banner--%>
         <div class="swiper-container banner">
             <div class="swiper-wrapper clearfix">
-                <div class="swiper-slide">
-                    <img src="${APP_PATH}/static/images/banner.png">
-                    <p>我是第一个banner</p>
-                </div>
-                <div class="swiper-slide">
-                    <img src="${APP_PATH}/static/images/banner.png">
-                    <p>我是第二个banner</p>
-                </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>

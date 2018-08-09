@@ -61,6 +61,10 @@
     var prev = ${prevId};
     var next = ${nextId};
     var createDate = ${createDate};
+    var nextTitle = '${nextTitle}';
+    var prevTitle = '${prevTitle}';
+    var prevUrl = '${prevUrl}';
+    var nextUrl = '${nextUrl}';
 
 </script>
 </html>

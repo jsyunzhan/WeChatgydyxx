@@ -100,7 +100,7 @@
                 /homepage/notice/** = anon
                 /homepage/banner/** = anon
                 /homepage/home/** = anon
-
+                /home/picture/show = anon
                 / = anon
                 /home/homepage = anon
                 /shiro/logout = logout
