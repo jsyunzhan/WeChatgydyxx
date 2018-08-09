@@ -10,6 +10,7 @@
         <typeAlias alias="AccountEntityInfo" type="domain.shiro.entity.AccountEntity"/>
         <typeAlias alias="WagesEntityInfo" type="domain.home.entity.WagesEntity"/>
         <typeAlias alias="SearchEntityInfo" type="domain.home.entity.SearchEntity"/>
+        <typeAlias alias="BannerEntityInfo" type="domain.home.entity.BannerEntity"/>
     </typeAliases>
 
 </configuration>

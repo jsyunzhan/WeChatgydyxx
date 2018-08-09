@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="domain.readme">
+<mapper namespace="domain.home.dao.BannerDao">
+
+    <resultMap id="ResultBannerEntityInfo" type="BannerEntityInfo">
+        <result property="details" column="BANNER_DETAILS" typeHandler="domain.home.entity.ConvertBlobTypeHandler"/>
+    </resultMap>
+
+    <select id="bannerList" resultMap="ResultBannerEntityInfo">
+        SELECT
+        t.ID id,
+        t.BANNER_TITLE title,
+        t.BANNER_DETAILS,
+        t.PICTURE_PATH picturePath,
+        t.CREATE_USER_ID createUserId,
+        t.CREATE_DATA createDate,
+        t.UPDATE_USER_ID updateUserId,
+        t.UPDATE_DATA updateDate
+        FROM t_home_banner t
+        WHERE t.DELETE_FLAG='1' AND t.STATUE_ID='1'
+        ORDER BY t.CREATE_DATA
+    </select>
+
+    <select id="bannerDetails" resultMap="ResultBannerEntityInfo">
+        SELECT
+        t.ID id,
+        t.BANNER_TITLE title,
+        t.BANNER_DETAILS,
+        t.PICTURE_PATH picturePath,
+        t.CLICK_COUNT clickCount,
+        t.CREATE_USER_ID createUserId,
+        t.CREATE_DATA createDate,
+        t.UPDATE_USER_ID updateUserId,
+        t.UPDATE_DATA updateDate
+        FROM t_home_banner t
+        WHERE t.DELETE_FLAG='1' AND t.STATUE_ID='1' AND t.ID=#{id}
+        ORDER BY t.CREATE_DATA
+    </select>
+
+    <update id="updateCount">
+        UPDATE t_home_banner SET
+        CLICK_COUNT=CLICK_COUNT+1
+        WHERE ID=#{id}
+    </update>
+
 
 </mapper>
