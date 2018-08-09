@@ -112,7 +112,6 @@ public class NoticeManagementController {
     public ModelAndView noticeSearchDetails(@PathVariable("id") Long id,@RequestParam("queryTitle") String queryTitle) throws ParseException{
         final NoticeEntity noticeEntity = noticeManagementService.noticeDetails(id);
         final List<SearchEntity> searchEntities = searchManagementService.searchList(queryTitle);
-
         Long prevId = 0L;
         Long nextId = 0L;
         String prevTitile = "";
