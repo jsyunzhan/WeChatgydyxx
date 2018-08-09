@@ -132,8 +132,8 @@ public class NewsManagementController {
         map.put("details",newsEntity.getDetails());
         map.put("prevId",prevId);
         map.put("nextId",nextId);
-        map.put("prevTitile",prevTitile);
-        map.put("nextTitile",nextTitile);
+        map.put("prevTitle",prevTitile);
+        map.put("nextTitle",nextTitile);
         map.put("nextUrl",nextUrl);
         map.put("prevUrl",prevUrl);
         map.put("queryTitle",queryTitle);

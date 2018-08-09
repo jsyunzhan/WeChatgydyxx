@@ -74,5 +74,6 @@
 </body>
 <script>
     var path  = '<%=request.getContextPath()%>';
+
 </script>
 </html>
