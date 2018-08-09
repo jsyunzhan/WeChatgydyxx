@@ -57,12 +57,13 @@
     var title = "${title}";
     var details = "${details}";
     var picturePath = '${picturePath}';
-    var prevUrl = ${prevUrl};
-    var nextUrl = ${nextUrl};
+    var prevUrl = '${prevUrl}';
+    var nextUrl = '${nextUrl}';
+    var queryTitle = '${queryTitle}';
     var prev = ${prevId};
     var next = ${nextId};
     var createDate = ${createDate};
-    conbsole.log(prevUrl,nextUrl);
+    console.log(prevUrl,nextUrl,queryTitle);
 
 </script>
 </html>
