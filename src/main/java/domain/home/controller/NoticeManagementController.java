@@ -141,6 +141,7 @@ public class NoticeManagementController {
 
             }
         }
+
         final Map<String, Object> map = new HashMap<>(12);
         map.put("title",noticeEntity.getTitle());
         map.put("details",noticeEntity.getDetails());
