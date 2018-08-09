@@ -102,7 +102,6 @@
                 /homepage/home/** = anon
                 / = anon
                 /home/homepage = anon
-                <!--/WEB-INF/page= anon-->
                 /shiro/logout = logout
                 /** = authc
             </value>
