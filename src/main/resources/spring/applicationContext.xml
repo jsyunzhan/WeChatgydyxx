@@ -102,7 +102,6 @@
                 <!--/WEB-INF/page= anon-->
                 /shiro/logout = logout
                 /** = authc
-
             </value>
         </property>
     </bean>
