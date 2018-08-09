@@ -96,8 +96,8 @@
                 /security/backUrl = anon
                 /static/** = anon
                 /home/login = anon
-                /home/news/** = anon
-                /home/notice/** = anon
+                /homepage/news/** = anon
+                /homepage/notice/** = anon
                 / = anon
                 <!--/WEB-INF/page= anon-->
                 /shiro/logout = logout
