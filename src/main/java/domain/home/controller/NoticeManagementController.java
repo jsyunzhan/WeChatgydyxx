@@ -68,7 +68,6 @@ public class NoticeManagementController {
         final NoticeEntity noticeEntity = noticeManagementService.noticeDetails(id);
         final NoticeEntity noticeEntityQuery = new NoticeEntity();
         final List<NoticeEntity> noticeEntities = noticeManagementService.noticelist(noticeEntityQuery);
-
         Long prevId = 0L;
         Long nextId = 0L;
         String prevTitile = "";
