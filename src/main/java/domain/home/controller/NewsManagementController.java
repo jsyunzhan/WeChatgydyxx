@@ -111,18 +111,18 @@ public class NewsManagementController {
                 if (i==0){
                     nextId = searchEntities.get(i+1).getTableId();
                     nextTitile = searchEntities.get(i+1).getTitle();
-                    nextUrl = searchEntities.get(i+1).getTitle() + "search/";
+                    nextUrl = searchEntities.get(i+1).getUrl() + "search/";
                 }else if (i==searchEntities.size()-1){
                     prevId = searchEntities.get(i-1).getTableId();
                     prevTitile = searchEntities.get(i-1).getTitle();
-                    prevUrl = searchEntities.get(i-1).getTitle() + "search/";
+                    prevUrl = searchEntities.get(i-1).getUrl() + "search/";
                 }else {
                     nextId = searchEntities.get(i+1).getTableId();
                     prevId = searchEntities.get(i-1).getTableId();
                     nextTitile = searchEntities.get(i+1).getTitle();
                     prevTitile = searchEntities.get(i-1).getTitle();
-                    nextUrl = searchEntities.get(i+1).getTitle() + "search/";
-                    prevUrl = searchEntities.get(i-1).getTitle() + "search/";
+                    nextUrl = searchEntities.get(i+1).getUrl() + "search/";
+                    prevUrl = searchEntities.get(i-1).getUrl() + "search/";
                 }
 
             }
