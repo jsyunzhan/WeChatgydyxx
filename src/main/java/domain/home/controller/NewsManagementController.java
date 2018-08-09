@@ -1,14 +1,18 @@
 package domain.home.controller;
 
 import domain.home.entity.NewsEntity;
+import domain.home.entity.SearchEntity;
 import domain.home.service.NewsManagementService;
+import domain.home.service.SearchManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,10 +22,12 @@ import java.util.Map;
 public class NewsManagementController {
 
     final private NewsManagementService newsManagementService;
+    final private SearchManagementService searchManagementService;
 
     @Autowired
-    public NewsManagementController(NewsManagementService newsManagementService){
+    public NewsManagementController(NewsManagementService newsManagementService,SearchManagementService searchManagementService){
         this.newsManagementService = newsManagementService;
+        this.searchManagementService = searchManagementService;
     }
 
     /**
@@ -73,7 +79,7 @@ public class NewsManagementController {
 
 
 
-        final Map<String, Object> map = new HashMap<>(10);
+        final Map<String, Object> map = new HashMap<>(11);
         map.put("title",newsEntity.getTitle());
         map.put("details",newsEntity.getDetails());
         map.put("prevId",prevId);
@@ -81,9 +87,59 @@ public class NewsManagementController {
         map.put("prevTitile",prevTitile);
         map.put("nextTitile",nextTitile);
         map.put("url","news");
+        map.put("queryTitle","");
         map.put("clickCount",newsEntity.getClickCount());
         map.put("picturePath",newsEntity.getPicturePath());
         map.put("createDate",newsEntity.getCreateDate().getTime());
         return new ModelAndView("details",map);
+    }
+
+    @RequestMapping(value = "/details/search/{id}")
+    @ResponseBody
+    public ModelAndView newsSearchDetails(@PathVariable("id") Long id,@RequestParam("queryTitle") String queryTitle) throws ParseException {
+        final NewsEntity newsEntity = newsManagementService.newsDetails(id);
+        final List<SearchEntity> searchEntities = searchManagementService.searchList(queryTitle);
+
+        Long prevId = 0L;
+        Long nextId = 0L;
+        String prevTitile = "";
+        String nextTitile = "";
+        String prevUrl = "";
+        String nextUrl = "";
+        for (int i=0;i<searchEntities.size();i++){
+            if (searchEntities.get(i).getTableId().equals(id)&&searchEntities.size()!=1&&"/homepage/news/details/".equals(searchEntities.get(i).getUrl())){
+                if (i==0){
+                    nextId = searchEntities.get(i+1).getTableId();
+                    nextTitile = searchEntities.get(i+1).getTitle();
+                    nextUrl = searchEntities.get(i+1).getTitle() + "search/";
+                }else if (i==searchEntities.size()-1){
+                    prevId = searchEntities.get(i-1).getTableId();
+                    prevTitile = searchEntities.get(i-1).getTitle();
+                    prevUrl = searchEntities.get(i-1).getTitle() + "search/";
+                }else {
+                    nextId = searchEntities.get(i+1).getTableId();
+                    prevId = searchEntities.get(i-1).getTableId();
+                    nextTitile = searchEntities.get(i+1).getTitle();
+                    prevTitile = searchEntities.get(i-1).getTitle();
+                    nextUrl = searchEntities.get(i+1).getTitle() + "search/";
+                    prevUrl = searchEntities.get(i-1).getTitle() + "search/";
+                }
+
+            }
+        }
+        final Map<String, Object> map = new HashMap<>(12);
+        map.put("title",newsEntity.getTitle());
+        map.put("details",newsEntity.getDetails());
+        map.put("prevId",prevId);
+        map.put("nextId",nextId);
+        map.put("prevTitile",prevTitile);
+        map.put("nextTitile",nextTitile);
+        map.put("nextUrl",nextUrl);
+        map.put("prevUrl",prevUrl);
+        map.put("queryTitle",queryTitle);
+        map.put("clickCount",newsEntity.getClickCount());
+        map.put("createDate", newsEntity.getCreateDate().getTime());
+        map.put("picturePath",newsEntity.getPicturePath());
+        return new ModelAndView("searchdetails",map);
     }
 }

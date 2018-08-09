@@ -29,9 +29,10 @@ public class SearchManagementController {
     @ResponseBody
     public ModelAndView searchList(@RequestParam("title") String title){
         final List<SearchEntity> searchEntities = searchManagementService.searchList(title);
-        final Map<String, Object> map = new HashMap<>(2);
+        final Map<String, Object> map = new HashMap<>(3);
         map.put("result", JSONObject.toJSON(searchEntities));
         map.put("title", "搜索结果");
+        map.put("queryTitle", title);
         return new ModelAndView("search",map);
     }
 }

@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class SearchEntity extends AbstractEntity{
 
-    private String tableId;
+    private Long tableId;
 
     private String url;
 
