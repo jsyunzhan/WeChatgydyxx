@@ -14,8 +14,8 @@ $(function () {
 
         // 跳转详情
         $(".listChild").click(function () {
-            var url = path + $(this).attr("url") + "search/" + $(this).attr("name") +"?queryTitle=s";
-            window.location.href = url;
+            var url = path + $(this).attr("url") + "search/" + $(this).attr("name") +"?queryTitle="+queryTitle;
+             window.location.href = url;
         });
     }
     search();

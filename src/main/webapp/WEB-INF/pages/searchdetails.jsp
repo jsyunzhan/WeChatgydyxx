@@ -40,8 +40,8 @@
         </div>
         <div class="textCon"></div>
         <div class="Paging">
-            <div class="preBtn">上一篇：学校动态</div>
-            <div class="nextBtn">下一篇：学校动态</div>
+            <div class="preBtn"></div>
+            <div class="nextBtn"></div>
         </div>
     </div>
     <%--页面底部--%>
@@ -59,11 +59,12 @@
     var picturePath = '${picturePath}';
     var prevUrl = '${prevUrl}';
     var nextUrl = '${nextUrl}';
+    var prevTitle = '${prevTitle}';
+    var nextTitle = '${nextTitle}';
     var queryTitle = '${queryTitle}';
     var prev = ${prevId};
     var next = ${nextId};
     var createDate = ${createDate};
-    console.log(prevUrl,nextUrl,queryTitle);
 
 </script>
 </html>

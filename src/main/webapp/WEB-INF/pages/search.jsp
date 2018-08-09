@@ -52,6 +52,7 @@
     var title = "${title}";
     var result = '${result}';
     var jsString = JSON.parse(result);
+    var queryTitle = '${queryTitle}';
     console.log(jsString)
 </script>
 </html>

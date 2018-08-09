@@ -28,6 +28,12 @@ $(function () {
     // 上一篇下一篇
     $(".preBtn").attr("name",prev);
     $(".nextBtn").attr("name",next);
+    $(".preBtn").attr("urlPart",prevUrl);
+    $(".nextBtn").attr("urlPart",nextUrl);
+    $(".preBtn").attr("urlPart",prevUrl);
+    $(".nextBtn").attr("urlPart",nextUrl);
+    $(".preBtn").text("上一篇："+prevTitle);
+    $(".nextBtn").text("下一篇："+nextTitle);
     if(prev == 0){
         $(".preBtn").hide();
     }
@@ -36,8 +42,9 @@ $(function () {
     }
     $(".Paging div").click(function () {
         var id = $(this).attr("name");
+        var urlPart = $(this).attr("urlPart");
         if (id!=0){
-            var url = path + '/homepage/'+ urlPart + '/details/' + id;
+            var url = path + urlPart + id +"?queryTitle=" +queryTitle;
             window.location.href = url;
         }
     })
