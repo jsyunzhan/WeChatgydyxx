@@ -23,7 +23,7 @@
         <div class="header clearfix">
             <%--Logo--%>
             <div class="logo">
-                <a href="${APP_PATH}/index.jsp">
+                <a href="${APP_PATH}/home/homepage">
                     <img src="${APP_PATH}/static/images/logo.png">
                 </a>
             </div>
