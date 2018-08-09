@@ -92,15 +92,14 @@ public class NoticeManagementController {
         }
 
 
-        final Map<String, Object> map = new HashMap<>(11);
+        final Map<String, Object> map = new HashMap<>(10);
         map.put("title",noticeEntity.getTitle());
         map.put("details",noticeEntity.getDetails());
         map.put("prevId",prevId);
         map.put("nextId",nextId);
-        map.put("prevTitile",prevTitile);
-        map.put("nextTitile",nextTitile);
+        map.put("prevTitle",prevTitile);
+        map.put("nextTitle",nextTitile);
         map.put("url","notice");
-        map.put("queryTitle","");
         map.put("clickCount",noticeEntity.getClickCount());
         map.put("createDate", noticeEntity.getCreateDate().getTime());
         map.put("picturePath",noticeEntity.getPicturePath());
