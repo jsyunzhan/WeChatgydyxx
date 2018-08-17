@@ -22,4 +22,9 @@ public class WagesQueryManagementServiceImpl implements WagesQueryManagementServ
     public List<WagesEntity> wagesList(Long loginId) {
         return wagesDao.wagesList(loginId);
     }
+
+    @Override
+    public WagesEntity wagesDetails(Long id) {
+        return wagesDao.wagesDetails(id);
+    }
 }

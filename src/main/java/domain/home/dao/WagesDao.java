@@ -7,5 +7,8 @@ import java.util.List;
 
 @Repository
 public interface WagesDao {
-    List<WagesEntity> wagesList(Long loginId);
+    List<WagesEntity> wagesList
+            (Long loginId);
+
+    WagesEntity wagesDetails(Long id);
 }

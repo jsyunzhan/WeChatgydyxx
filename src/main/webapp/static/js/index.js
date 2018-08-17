@@ -47,8 +47,8 @@ $(function () {
         window.location.href = url;
     });
     $(".Mchild:nth-child(3)").click(function(){
-        // var url = path + '/homepage/wages';
-        // window.location.href = url;
+        var url = path + '/homepage/wages/listpagee';
+        window.location.href = url;
     });
     $(".Mchild:nth-child(4)").click(function(){
         var url = path + '/homepage/internal/listpage';

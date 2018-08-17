@@ -22,4 +22,23 @@
         WHERE t.DELETE_FLAG='1' AND t.ACCOUNT_ID=#{id}
         ORDER BY t.CREATE_DATA
     </select>
+
+    <!--根据id查看详情-->
+    <select id="wagesDetails" resultType="WagesEntityInfo">
+        SELECT
+        t.ID id,
+        t.WAGES_ID wagesId,
+        t.ACCOUNT_ID accountId,
+        (SELECT b.USER_NAME FROM t_sys_account b WHERE b.id=t.ACCOUNT_ID) accountName,
+        (SELECT b.WAGES_NAME FROM t_main_wages b WHERE b.id=t.WAGES_ID) wagesName,
+        t.WAGES_DETAILS wagesdetails,
+        t.WAGES_DATA wagesData,
+        t.CREATE_USER_ID createUserId,
+        t.CREATE_DATA createDate,
+        t.UPDATE_USER_ID updateUserId,
+        t.UPDATE_DATA updateDate
+        FROM t_teacher_wages t
+        WHERE t.DELETE_FLAG='1' AND t.ID=#{id}
+        ORDER BY t.CREATE_DATA
+    </select>
 </mapper>
