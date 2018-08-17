@@ -72,7 +72,9 @@ public class WagesQueryManagementController extends AbstractActionController{
         }
 
 
-        final Map<String, Object> map = new HashMap<>(11);
+        final Map<String, Object> map = new HashMap<>(8);
+
+        map.put("name",wagesEntity.getAccountName());
         map.put("title",wagesEntity.getWagesName());
         map.put("details",wagesEntity.getWagesdetails());
         map.put("prevId",prevId);
