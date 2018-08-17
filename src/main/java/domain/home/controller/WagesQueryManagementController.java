@@ -83,6 +83,6 @@ public class WagesQueryManagementController extends AbstractActionController{
         map.put("nextTitle",nextTitile);
 
         map.put("wagesData",wagesEntity.getWagesData().getTime());
-        return new ModelAndView("wagesDetails");
+        return new ModelAndView("wagesdetails",map);
     }
 }

@@ -43,7 +43,7 @@ $(function () {
     initUtils();
     $(".search").click(function () {
         var search = popup({
-            "html": '<div class="searchPop"><div class="searchDetail"><div class="searchIcon"><img src="'+path+'/static/images/searchIcon.png"></div><div class="searchInput"><input type="text" placeholder="搜索相关标题"></div><div class="searchBtn">搜索</div></div></div>',
+            "html": '<div class="searchPop"><div class="searchDetail"><div class="searchIcon"><img src="'+path+'/static/images/searchIcon.png"></div><div class="searchInput"><input type="search" placeholder="搜索相关标题"></div><div class="searchBtn">搜索</div></div></div>',
             "width": '',
             "height": '',
             "params": {},
@@ -54,6 +54,11 @@ $(function () {
             var url = path + "/homepage/home/search?title=" + title;
             window.location.href = url;
         });
+        $(document).keydown(function () {
+            if (event.keyCode==13 ||event.keyCode==108 ){
+                $(".searchBtn").trigger("click");
+            }
+        })
         $("#maskLayer").click(function () {
             popdown(search);
         });

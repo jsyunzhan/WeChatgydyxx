@@ -5,19 +5,20 @@ $(function () {
 
     // 请求
     $.ajax({
-        url:path+'/homepage/'+ data + '/list',
+        url:path+'/homepage/wages/list',
         type:"GET",dataType:"json",
         success:function (event) {
+            console.log(event);
             var _html = "";
             for(var i=0;i<event.length;i++){
-                _html += '<div class="listChild" name="'+event[i].id+'"><div>'+event[i].title+'</div><div>'+timestampToTime(event[i].createDate)+'</div></div>';
+                _html += '<div class="listChild" name="'+event[i].id+'"><div>'+event[i].wagesName+'</div><div>'+timestampToTimeAll(event[i].createDate)+'</div></div>';
             }
             $(".list").append(_html);
             showMore(5);
 
             // 跳转详情
             $(".listChild").click(function () {
-                var url = path + '/homepage/'+ data + '/details/' + $(this).attr("name");
+                var url = path + '/homepage/wages/details/' + $(this).attr("name");
                 window.location.href = url;
             })
         }
