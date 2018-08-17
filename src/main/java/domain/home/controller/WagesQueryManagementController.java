@@ -25,7 +25,9 @@ public class WagesQueryManagementController extends AbstractActionController{
 
     @RequestMapping(value = "/listpage")
     public ModelAndView index(){
-        return new ModelAndView("wagesList");
+        final ModelAndView modelAndView = new ModelAndView("wagesList");
+        modelAndView.addObject("title","工资查询");
+        return modelAndView;
     }
 
     /**
