@@ -11,7 +11,7 @@ $(function () {
             console.log(event);
             var _html = "";
             for(var i=0;i<event.length;i++){
-                _html += '<div class="listChild" name="'+event[i].id+'"><div>'+event[i].wagesName+'</div><div>'+timestampToTimeAll(event[i].createDate)+'</div></div>';
+                _html += '<div class="listChild" name="'+event[i].id+'"><div>'+event[i].wagesName+'</div><div>'+timestampToTimeAll(event[i].wagesData)+'</div></div>';
             }
             $(".list").append(_html);
             showMore(5);
