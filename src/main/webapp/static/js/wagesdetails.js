@@ -4,7 +4,7 @@ $(function () {
 
     var _html = "";
     _html += '<div class="wages clearfix"><div class="wagesName">姓名</div><div class="wagesData">'+name+'</div></div>';
-    _html += '<div class="wages clearfix"><div class="wagesName">发放时间</div><div class="wagesData">'+createDate+'</div></div>';
+    _html += '<div class="wages clearfix"><div class="wagesName">发放时间</div><div class="wagesData">'+timestampToTimeAll(createDate)+'</div></div>';
     details = details.split(";");
     console.log(details);
     for (var i=0;i<details.length-1;i++){
