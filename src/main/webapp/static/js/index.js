@@ -30,10 +30,10 @@ $(function () {
                 loop: true
             });
             // 跳转详情
-            $(".banner .swiper-wrapper .swiper-slide").click(function () {
-                var url = path + '/homepage/banner/details/' + $(this).attr("name");
-                window.location.href = url;
-            })
+            // $(".banner .swiper-wrapper .swiper-slide").click(function () {
+            //     var url = path + '/homepage/banner/details/' + $(this).attr("name");
+            //     window.location.href = url;
+            // })
         }
     });
 
