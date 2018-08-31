@@ -46,16 +46,19 @@
     </div>
     <%--页面底部--%>
     <div class="footer">
-        <p>Copyright@2018 http://xxx.org All Rights Reserved.</p>
-        <p>高邮市第一实验小学 版权所有</p>
-        <p> 苏ICP备11454545号-1 管理网址 </p>
+        <p>Copyright@2018 <a href="${APP_PATH}/home/homepage" style="color: #fff;">gydyxx.com</a> All Rights Reserved</p>
+        <p>苏ICP备10084223号 管理网址</p>
+        <p>
+            <img src="${APP_PATH}/static/images/country.png" style="display:inline-block;width:14px;height:14px;vertical-align:top;margin-top: 2px;">
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32108402000010" style="color: #fff;">苏公网安备 32108402000010号</a>
+        </p>
     </div>
 </div>
 </body>
 <script>
     var path  = '<%=request.getContextPath()%>';
     var title = "${title}";
-    var details = "${details}";
+    var details = '${details}';
     var picturePath = '${picturePath}';
     var urlPart = '${url}';
     var prev = ${prevId};

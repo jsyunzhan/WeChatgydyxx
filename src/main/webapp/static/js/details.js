@@ -10,16 +10,18 @@ $(function () {
             url:path + "/home/picture/show",
             type:"POST",contentType: "application/json",data:JSON.stringify(data),async:false,
             success:function(event){
-                for (var i=0;i<event.length;i++){
-                    _html += '<div class="imgDetial"><img src="data:image/gif;base64,'+event[i]+'"></div>';
-                }
+                var dd = details.replace(/<p>/g,"<div class='newsCon_font'>");
+                dd = dd.replace(/<\/p>/g,"</div>");
+                dd = dd.replace(/{\d+}/g,function (str) {
+                    var str = Number(str.match(/\d+/g));
+                    str--;
+                    return '<img src="data:image/gif;base64,'+event[str]+'" class="imgDetial">';
+                });
+                _html += dd;
+                $(".textCon").append(_html);
             }
         })
     }
-    var dd=details.replace(/<p>/g,"<div>");
-    dd=dd.replace(/<\/p>/g,"</div>");
-    _html += dd;
-    $(".textCon").html(_html);
 
     // 发表时间
     var time = timestampToTimeAll(createDate);
